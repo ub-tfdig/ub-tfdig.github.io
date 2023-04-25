@@ -1,10 +1,10 @@
 ---
-title: "Creating a Database in PostgreSQL"
+title: "Creating a Database with PostgreSQL"
 date: January 31 2023
 fontsize: 12pt
 ---
 
-# Creating a Database in PostgreSQL
+# Creating a Database with PostgreSQL
 
 ## Preparations
 
