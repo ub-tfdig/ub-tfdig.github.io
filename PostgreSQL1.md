@@ -23,7 +23,7 @@ PostgreSQL provides the engine we are going to use to manage the databases. In t
 In order to "communicate" with the database system, we will use the SQL shell "psql", a terminal-based, command-line tool that we can use to connect to PostgreSQL. There are several other ways of interacting with and managing PostgreSQL databases, but we will mainly use psql.
 
 ## PART I - 19.04.23 Step by step instructions
-*Connect to PostgreSQL via psql*
+### *Connect to PostgreSQL via psql*
 <br>
 Open the "SQL Shell (psql)"
 Press ENTER to accept the default server
@@ -34,7 +34,7 @@ Enter your password (you will not be able to see on the screen that your passwor
 
 You should now have a line on your screen that reads "postgres=#"
 
-*Create a new database*
+### *Create a new database*
 <br>
 Type (after postgres=#):
 
@@ -48,11 +48,11 @@ Type (after postgres=#):
 
  "CREATE DATABASE" is the command, "Quran_Translations" is the name you chose for the database, and the semi-colon is what signalizes that you want to run the command. If you type the command and press enter without the semi-colon, the command will not run, and the database will not be created. 
 
- *Connect to the new database*
+ ### *Connect to the new database*
  <br>
  Exit and re-enter psql. This time, press ENTER once for default server and then, after "DATABASE [postgres]" type the name of your new database, for example "Quran_Translations". Then press ENTER twice and insert your password as before. You should end up with a new line that has the name of your new database followed by =#. For example: Quran_Translations=#.
 
-*Create a table in the database*
+### *Create a new table in the database*
 <br>
 We can create many different types of tables, depending on the data we have. For this first exercise, we will create a simple table with three columns. The first column will automatically assign an id number to each row of data we insert. This is called an auto-incremental integer column. The other two columns will have variables we choose. For my database of Qur'an translations, I may want a table for Italian translations, with the columns "translator name" and "date of publication". Type:
 
@@ -61,7 +61,7 @@ id BIGSERIAL NOT NULL PRIMARY KEY, translator_name VARCHAR(50) NOT NULL, publica
 
 For each column we want to create, thus, we enter what we want to name it, what kind of data it is and any restrictions we want the column to have. VARCHAR(50) means that we want the datatype "variable character" with maximum 50 characters, and "not null" means that each row of data we enter must have a value in this column, it cannot be left empty. 
 
-*Insert data into the table*
+### *Insert data into the table*
 <br>
 To insert data into the table, type:
 
@@ -71,7 +71,7 @@ For example:
 
 INSERT INTO Italian_Translations (translator_name, publication_date) VALUES ('Bonelli', '1929');
 
-*View, change and delete
+### *View, change and delete data*
 
 To view the data you have inserted in the table, type:
 
