@@ -1,5 +1,5 @@
 ---
-title: "TFDIG - A Study Group in Digital Research Methods for researchers at The Faculty of Theology, University of Oslo"
+title: "Program Spring 2023"
 date: April 12 2023
 fontsize: 12pt
 ---
