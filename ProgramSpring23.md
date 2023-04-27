@@ -29,6 +29,7 @@ Windows: https://www.youtube.com/watch?v=1q5-8O7WvZs
 macOS: https://www.youtube.com/watch?v=wCMXbM5J0X8 
 
 ## 3. May
+Part II of the project: "Creating a Database with PostgreSQL"
 
 ## 31. May
 
