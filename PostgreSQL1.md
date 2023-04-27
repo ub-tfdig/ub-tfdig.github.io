@@ -25,6 +25,7 @@ In order to "communicate" with the database system, we will use the SQL shell "p
 ## PART I - 19.04.23 Step by step instructions
 ### *Connect to PostgreSQL via psql*
 Open the "SQL Shell (psql)"
+<br>
 Press ENTER to accept the default server
 <br>
 Press ENTER to accept the default database
