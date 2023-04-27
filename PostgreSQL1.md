@@ -26,9 +26,13 @@ In order to "communicate" with the database system, we will use the SQL shell "p
 ### *Connect to PostgreSQL via psql*
 Open the "SQL Shell (psql)"
 Press ENTER to accept the default server
+<br>
 Press ENTER to accept the default database
+<br>
 Press ENTER to accept the default port
+<br>
 Press ENTER to accept default username
+<br>
 Enter your password (you will not be able to see on the screen that your password is being entered) and ENTER
 
 You should now have a line on your screen that reads "postgres=#"
