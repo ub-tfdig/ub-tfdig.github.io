@@ -39,7 +39,7 @@ In this meeting, we will start learning how to import data from a file into our 
 ## 31. May
 Part III of the project: "Creating a Database with PostgreSQL"
 
-
+In this meeting, we will continue working on ways to import data into our database.
 
 ## 14. June
 Final meeting of the spring - with cake! Bring your cup of coffee or tea to the meeting. We will have cake together while we sum up the Spring term and agree on a schedule for the Autumn. Please prepare answers to the following questions:
