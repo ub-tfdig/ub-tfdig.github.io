@@ -12,4 +12,6 @@ Welcome to the TFDIG website. The program for the study group and all progress w
 
 To receive updates about the study group, sign up to the mailing list by sending a request to tf-dig@ub.uio.no. 
 
+[Photo: Unsplash](/C:\Users\serenanb\OneDrive - Universitetet i Oslo\Documents\GitHub\ub-tfdig.github.io\photo-1519389950473-47ba0277781c.avif)
+
 
