@@ -6,6 +6,12 @@ fontsize: 12pt
 
 # Creating a Database with PostgreSQL - Step-by-step Instructions
 
+- [Preparations](/https://ub-tfdig.github.io/PostgreSQL1.html#preparations)
+- [A Brief Introduction to PostgreSQL](/https://ub-tfdig.github.io/PostgreSQL1.html#a-brief-introduction-to-postgresql)
+- [PART I - Creating and editing a database (19.04.23)](/https://ub-tfdig.github.io/PostgreSQL1.html#part-i---creating-and-editing-a-database---190423)
+- [PART II - Importing data from a file into the database (02.05.23)](/https://ub-tfdig.github.io/PostgreSQL1.html#part-ii---importing-data-from-a-file-into-the-database---020523)
+
+
 ## Preparations
 
 - Download the EDB PostgreSQL installer on your laptop from [this site](/https://www.enterprisedb.com/downloads/postgres-postgresql-downloads), by choosing your operating system and the newest version of PostgreSQL, and complete the installation process. During installation, you will be asked to create a PostgreSQL user password. Make sure you remember this password. 
@@ -22,7 +28,7 @@ PostgreSQL provides the engine we are going to use to manage the databases. In t
 <br>
 In order to "communicate" with the database system, we will use the SQL shell "psql", a terminal-based, command-line tool that we can use to connect to PostgreSQL. There are several other ways of interacting with and managing PostgreSQL databases, but we will mainly use psql.
 
-## PART I - Creating and editing a database - 19.04.23
+## PART I - Creating and editing a database (19.04.23)
 ### *Connect to PostgreSQL via psql*
 Open the "SQL Shell (psql)"
 <br>
@@ -105,7 +111,9 @@ For example:
 
 DELETE FROM Italian_Translations WHERE id = 1;
 
-## Part II - Importing data from a file into the database - 02.05.23
+
+
+## Part II - Importing data from a file into the database (02.05.23)
 
 ### As last time, [Connect to PostgreQSL via psql](/https://ub-tfdig.github.io/PostgreSQL1.html#connect-to-postgresql-via-psql) selecting the new database you created or the default database.
 
@@ -121,7 +129,9 @@ For how to create a csv. file with your own data to import, see below.
 
 The online tutorial does not mention that you may need to change the security settings of the file you want to import data from, in order to enable psql to read it. 
 
-For Windows users: right-click on the file name and select "Properties" -> "Security" -> "Edit" -> "Add". Type "Everyone" and click the box "Allow full control". Select "Apply" before closing. Psql should now be able to access the file and read the data on it, until you make changes to the file, which will reset security settings. We are still to understand how to make the security setting changes permanent for the file. 
+For Windows users: right-click on the file name and select "Properties" -> "Security" -> "Edit" -> "Add". Type "Everyone" and click the box "Allow full control". Select "Apply" before closing. Psql should now be able to access the file and read the data on it, until you make changes to the file, which will reset security settings. We are still to understand how to make the security setting changes permanent for the file.
+
+Note that if you are using Windows in another language than English, you need to find the equivalent to "Everyone" in that language. For French Windows, for example, you need to type "Tout le monde".
 
 ### Locate the file
 
