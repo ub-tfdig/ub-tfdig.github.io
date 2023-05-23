@@ -4,6 +4,9 @@ date: April 12 2023
 fontsize: 12pt
 ---
 
+[Home](/) &bull; [Program for Spring 2023](/ProgramSpring23.md) &bull; [Creating a Database with PostgreSQL](/PostgreSQL1.md) 
+
+
 # Spring 2023
 
 The study group meets approximately every other Wednesday, from 14:00 to 15:00.
