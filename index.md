@@ -4,7 +4,7 @@ date: April 12 2023
 fontsize: 12pt
 ---
 
-[Home](/) &bull; [Program for Spring 2023](/ProgramSpring23.md) &bull; [Creating a Database with PostgreSQL](/PostgreSQL1.md) 
+[Home](/) &bull; [Spring 2023 Meeting Schedule](/ProgramSpring23.md) &bull; [Creating a Database with PostgreSQL](/PostgreSQL1.md) 
 
 # TFDIG - The TF Study Group for Digital Research Tools and Methods
 
