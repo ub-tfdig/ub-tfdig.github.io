@@ -8,14 +8,15 @@ fontsize: 12pt
 
 - [Preparations](/https://ub-tfdig.github.io/PostgreSQL1.html#preparations)
 - [A Brief Introduction to PostgreSQL](/https://ub-tfdig.github.io/PostgreSQL1.html#a-brief-introduction-to-postgresql)
-- [PART I - Creating and editing a database (19.04.23)](/https://ub-tfdig.github.io/PostgreSQL1.html#part-i---creating-and-editing-a-database---190423)
-- [PART II - Importing data from a file into the database (02.05.23)](/https://ub-tfdig.github.io/PostgreSQL1.html#part-ii---importing-data-from-a-file-into-the-database---020523)
+- [PART I - Creating and editing a database (19.04.23)](/https://ub-tfdig.github.io/PostgreSQL1.html#part-i---creating-and-editing-a-database-190423)
+- [PART II - Importing data from a file into the database (02.05.23)](/https://ub-tfdig.github.io/PostgreSQL1.html#part-ii---importing-data-from-a-file-into-the-database-020523)
 
 
 ## Preparations
 
 - Download the EDB PostgreSQL installer on your laptop from [this site](/https://www.enterprisedb.com/downloads/postgres-postgresql-downloads), by choosing your operating system and the newest version of PostgreSQL, and complete the installation process. During installation, you will be asked to create a PostgreSQL user password. Make sure you remember this password. 
 - In the PostgreSQL folder on your PC, find the script file called "SQL Shell (psql)" or "runpsql.bat", and make a shortcut to it on your desktop.
+
 
 ## A Brief Introduction to PostgreSQL
 PostgreSQL is a database management system based on the programming language SQL (Structured Query Language). PostgreSQL is "the world's most advanced open source relational database" [see postgresql.org](/http://postgresql.org). 
@@ -27,6 +28,8 @@ PostgreSQL is a database management system based on the programming language SQL
 PostgreSQL provides the engine we are going to use to manage the databases. In this case, the database you create will be stored locally on your laptop, which will therefore serve as your database server. You will not need internet access to connect to your database.
 <br>
 In order to "communicate" with the database system, we will use the SQL shell "psql", a terminal-based, command-line tool that we can use to connect to PostgreSQL. There are several other ways of interacting with and managing PostgreSQL databases, but we will mainly use psql.
+
+
 
 ## PART I - Creating and editing a database (19.04.23)
 ### *Connect to PostgreSQL via psql*
@@ -117,72 +120,9 @@ DELETE FROM Italian_Translations WHERE id = 1;
 
 ### As last time, [Connect to PostgreQSL via psql](/https://ub-tfdig.github.io/PostgreSQL1.html#connect-to-postgresql-via-psql) selecting the new database you created or the default database.
 
-### Practice importing data by using an example file
+### Create a csv. file with your data
 
-In order to practice importing files, we used first [this online tutorial](/https://www.postgresqltutorial.com/postgresql-tutorial/import-csv-file-into-posgresql-table/) as an example.
-
-Download the example csv. file from the tutorial [here](/https://www.postgresqltutorial.com/wp-content/uploads/2020/07/persons.csv).
-
-For how to create a csv. file with your own data to import, see below.
-
-### Give psql access to the file
-
-The online tutorial does not mention that you may need to change the security settings of the file you want to import data from, in order to enable psql to read it. 
-
-For Windows users: right-click on the file name and select "Properties" -> "Security" -> "Edit" -> "Add". Type "Everyone" and click the box "Allow full control". Select "Apply" before closing. Psql should now be able to access the file and read the data on it, until you make changes to the file, which will reset security settings. We are still to understand how to make the security setting changes permanent for the file.
-
-Note that if you are using Windows in another language than English, you need to find the equivalent to "Everyone" in that language. For French Windows, for example, you need to type "Tout le monde".
-
-### Locate the file
-
-In order to import data from the file, you will need its file path.
-
-For Windows users: right-click on the file name and select "Properties" -> "Details". Under details you will find the "Folder path". To that you have to add the file name.
-
-Example: if the folder path is "C:\Downloads", the file path will be "C:\Downloads\persons.csv"
-
-### Create the table that you want to import the data to
-
-Following the example in the online tutorial, create the following table:
-
-CREATE TABLE persons (
-  id SERIAL,
-  first_name VARCHAR(50),
-  last_name VARCHAR(50),
-  dob DATE,
-  email VARCHAR(50),
-  PRIMARY KEY (id)
-)
-
-### Import the data from the file you have prepared into the table you have created
-
-Again, following the example from the online tutorial:
-
-COPY persons(first_name, last_name, dob, email)
-FROM 'file_path'
-DELIMITER ','
-CSV HEADER;
-
-Remember to insert your file path! For example:
-
-COPY persons(first_name, last_name, dob, email)
-FROM 'C:\Downloads\persons.csv'
-DELIMITER ','
-CSV HEADER;
-
-The following reply should appear: "COPY 2"
-
-### See the data you have imported
-
-By using the command we learned last time:
-
-SELECT * FROM persons;
-
-### Create a csv. file with your own data
-
-After we successfully completed the tutorial example, we started exploring how to input our own data into a csv. file to be uploaded.
-
-We can create a csv. file from scratch by using an excel sheet. 
+We can create a csv. file by using an excel sheet. 
 
 Open a new excel document and use row nr. 1 for column names, for example:
 
@@ -196,9 +136,25 @@ Einar Berg 1980 Norwegian
 
 To save the file in csv. format select "Save as" and select the file type "CSV (Comma delimited)".
 
-Make then sure you follow the steps above to give psql access to the file and locate the file path.
+Give your file a name without spaces, for example: translations.csv
 
-### Create the table into which you want to import the data
+### Give psql access to the file
+
+You may need to change the security settings of the file you want to import data from, in order to enable psql to read it. 
+
+For Windows users: right-click on the file name and select "Properties" -> "Security" -> "Edit" -> "Add". Type "Everyone" and click the box "Allow full control". Select "Apply" before closing. Psql should now be able to access the file and read the data on it, until you make changes to the file, which will reset security settings. We are still to understand how to make the security setting changes permanent for the file.
+
+Note that if you are using Windows in another language than English, you need to find the equivalent to "Everyone" in that language. For French Windows, for example, you need to type "Tout le monde".
+
+### Locate the file
+
+In order to import data from the file, you will need its file path.
+
+For Windows users: right-click on the file name and select "Properties" -> "Details". Under details you will find the "Folder path". To that you have to add the file name.
+
+Example: if the folder path is "C:\Downloads", the file path will be "C:\Downloads\translations.csv"
+
+### Create a table into which to import the data
 
 Remember to use the same column names as in your csv. file.
 
@@ -222,9 +178,7 @@ For example:
  PRIMARY KEY (id)
  );
 
-### Import your data
-
-In this case, it is important that you set your delimiter to ';'. 
+### Import the data from the file you have prepared into the table you have created
 
 COPY table_name(column1, column2, column3, column4)
 FROM 'file_path'
@@ -237,6 +191,8 @@ COPY translations(first_name, last_name, year, language)
 FROM 'C:\Downloads\translations.csv'
 DELIMITER ';'
 CSV HEADER;
+
+The following reply should appear: "COPY 2"
 
 ### View your imported data
 
