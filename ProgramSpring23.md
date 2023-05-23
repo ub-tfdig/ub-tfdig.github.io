@@ -31,8 +31,16 @@ macOS: https://www.youtube.com/watch?v=wCMXbM5J0X8
 ## 3. May
 Part II of the project: "Creating a Database with PostgreSQL"
 
+In this meeting, we will start learning how to import data from a file into our database.
+
 ## 31. May
+Part III of the project: "Creating a Database with PostgreSQL"
+
+
 
 ## 14. June
-
-
+Final meeting of the spring - with cake! Bring your cup of coffee or tea to the meeting. We will have cake together while we sum up the Spring term and agree on a schedule for the Autumn. Please prepare answers to the following questions:
+- Which digital tools or methods are you interested in focusing on?
+- Which research projects are you working on or planning that you think could be developed by using digital tools?
+- Do Wednesdays 14:00 - 16:00 work for you this Autumn?
+- How often should we meet?
