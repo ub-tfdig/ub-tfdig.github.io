@@ -4,7 +4,7 @@ date: January 31 2023
 fontsize: 12pt
 ---
 
-# Creating a Database with PostgreSQL
+# Creating a Database with PostgreSQL - Step-by-step Instructions
 
 ## Preparations
 
@@ -22,7 +22,7 @@ PostgreSQL provides the engine we are going to use to manage the databases. In t
 <br>
 In order to "communicate" with the database system, we will use the SQL shell "psql", a terminal-based, command-line tool that we can use to connect to PostgreSQL. There are several other ways of interacting with and managing PostgreSQL databases, but we will mainly use psql.
 
-## PART I - 19.04.23 Step by step instructions
+## PART I - Creating and editing a database - 19.04.23
 ### *Connect to PostgreSQL via psql*
 Open the "SQL Shell (psql)"
 <br>
@@ -104,6 +104,139 @@ DELETE FROM table_name WHERE id = nr;
 For example:
 
 DELETE FROM Italian_Translations WHERE id = 1;
+
+## Part II - Importing data from a file into the database - 02.05.23
+
+### As last time, [Connect to PostgreQSL via psql](/https://ub-tfdig.github.io/PostgreSQL1.html#connect-to-postgresql-via-psql) selecting the new database you created or the default database.
+
+### Practice importing data by using an example file
+
+In order to practice importing files, we used first [this online tutorial](/https://www.postgresqltutorial.com/postgresql-tutorial/import-csv-file-into-posgresql-table/) as an example.
+
+Download the example csv. file from the tutorial [here](/https://www.postgresqltutorial.com/wp-content/uploads/2020/07/persons.csv).
+
+For how to create a csv. file with your own data to import, see below.
+
+### Give psql access to the file
+
+The online tutorial does not mention that you may need to change the security settings of the file you want to import data from, in order to enable psql to read it. 
+
+For Windows users: right-click on the file name and select "Properties" -> "Security" -> "Edit" -> "Add". Type "Everyone" and click the box "Allow full control". Select "Apply" before closing. Psql should now be able to access the file and read the data on it, until you make changes to the file, which will reset security settings. We are still to understand how to make the security setting changes permanent for the file. 
+
+### Locate the file
+
+In order to import data from the file, you will need its file path.
+
+For Windows users: right-click on the file name and select "Properties" -> "Details". Under details you will find the "Folder path". To that you have to add the file name.
+
+Example: if the folder path is "C:\Downloads", the file path will be "C:\Downloads\persons.csv"
+
+### Create the table that you want to import the data to
+
+Following the example in the online tutorial, create the following table:
+
+CREATE TABLE persons (
+  id SERIAL,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  dob DATE,
+  email VARCHAR(50),
+  PRIMARY KEY (id)
+)
+
+### Import the data from the file you have prepared into the table you have created
+
+Again, following the example from the online tutorial:
+
+COPY persons(first_name, last_name, dob, email)
+FROM 'file_path'
+DELIMITER ','
+CSV HEADER;
+
+Remember to insert your file path! For example:
+
+COPY persons(first_name, last_name, dob, email)
+FROM 'C:\Downloads\persons.csv'
+DELIMITER ','
+CSV HEADER;
+
+The following reply should appear: "COPY 2"
+
+### See the data you have imported
+
+By using the command we learned last time:
+
+SELECT * FROM persons;
+
+### Create a csv. file with your own data
+
+After we successfully completed the tutorial example, we started exploring how to input our own data into a csv. file to be uploaded.
+
+We can create a csv. file from scratch by using an excel sheet. 
+
+Open a new excel document and use row nr. 1 for column names, for example:
+
+first_name last_name year language
+
+and fill in the rows with your data, for example:
+
+Luigi Bonelli 1929 Italian
+
+Einar Berg 1980 Norwegian
+
+To save the file in csv. format select "Save as" and select the file type "CSV (Comma delimited)".
+
+Make then sure you follow the steps above to give psql access to the file and locate the file path.
+
+### Create the table into which you want to import the data
+
+Remember to use the same column names as in your csv. file.
+
+CREATE TABLE table_name (
+ id SERIAL,
+ first_name VARCHAR(50),
+ last_name VARCHAR(50),
+ year VARCHAR(4),
+ language VARCHAR(50),
+ PRIMARY KEY (id)
+ );
+
+For example:
+
+ CREATE TABLE translations (
+ id SERIAL,
+ first_name VARCHAR(50),
+ last_name VARCHAR(50),
+ year VARCHAR(4),
+ language VARCHAR(50),
+ PRIMARY KEY (id)
+ );
+
+### Import your data
+
+In this case, it is important that you set your delimiter to ';'. 
+
+COPY table_name(column1, column2, column3, column4)
+FROM 'file_path'
+DELIMITER ';'
+CSV HEADER;
+
+For example:
+
+COPY translations(first_name, last_name, year, language)
+FROM 'C:\Downloads\translations.csv'
+DELIMITER ';'
+CSV HEADER;
+
+### View your imported data
+
+With:
+
+SELECT * FROM table_name;
+
+Example:
+
+SELECT * FROM translations;
 
 
 
