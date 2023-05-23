@@ -8,4 +8,6 @@ fontsize: 12pt
 
 Welcome to the TFDIG website. The program for the study group and all progress we make will be documented here. In April 2023 we started working on the project "Creating a Database with PostgreSQL". 
 
+To receive updates about the study group, sign up to the mailing list by sending a request to tf-dig@ub.uio.no. 
+
 [Home](/) &bull; [Program for Spring 2023](/ProgramSpring23.md) &bull; [Creating a Database with PostgreSQL](/PostgreSQL1.md) 
