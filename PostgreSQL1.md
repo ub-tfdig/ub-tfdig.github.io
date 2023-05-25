@@ -9,10 +9,10 @@ fontsize: 12pt
 
 # Creating a Database with PostgreSQL - Step-by-step Instructions
 
-- [Preparations](/https://ub-tfdig.github.io/PostgreSQL1.html#preparations)
-- [A Brief Introduction to PostgreSQL](/https://ub-tfdig.github.io/PostgreSQL1.html#a-brief-introduction-to-postgresql)
-- [PART I - Creating and editing a database (19.04.23)](/https://ub-tfdig.github.io/PostgreSQL1.html#part-i---creating-and-editing-a-database-190423)
-- [PART II - Importing data from a file into the database (02.05.23)](/https://ub-tfdig.github.io/PostgreSQL1.html#part-ii---importing-data-from-a-file-into-the-database-020523)
+- [Preparations](#preparations)
+- [A Brief Introduction to PostgreSQL](#a-brief-introduction-to-postgresql)
+- [PART I - Creating and editing a database (19.04.23)](#part-i---creating-and-editing-a-database-190423)
+- [PART II - Importing data from a file into the database (02.05.23)](#part-ii---importing-data-from-a-file-into-the-database-020523)
 
 
 ## Preparations
